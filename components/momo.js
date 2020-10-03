@@ -10,13 +10,15 @@ export default function Momo() {
         <Feather name="lock" size={32} color="green" />
         <Text style={[styles.h2, styles.bold]}>Hello! </Text>
         <Text style={[styles.h3, styles.upperCase]}>Helen Nguyen Minh</Text>
-        <Text style={[styles.h3, styles.mb20]}>09876543f20</Text>
+        <Text style={[styles.h3, styles.mb20]}>09876543210</Text>
         <View style={styles.sectionStyle}>
           <Image 
             style={styles.icons}
             source={require('../assets/Lock-04.png')}
           />
           <TextInput 
+            secureTextEntry={true} 
+            password={true}
             style={[styles.formControll, styles.mb20, styles.bold]}
             placeholder="Password"
           />

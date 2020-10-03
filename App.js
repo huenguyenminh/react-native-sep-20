@@ -4,10 +4,13 @@ import { SafeAreaView, StyleSheet, Text, View, TextInput, TouchableOpacity, Touc
 import { Ionicons } from '@expo/vector-icons';
 import Momo from './components/momo';
 import Fb from './components/fb';
+import Insta from './components/insta'
 
 export default function App() {
   return (
-    <Fb/>
+    // <Insta/>
+    <Momo/>
+    // <Fb/>
   );
 }
 

@@ -7,7 +7,7 @@ const screenWidth = Dimensions.get("window").width;
 const bannerHeight = (screenWidth / 300) * 168;
 const fbColor = "#3b5998";
 
-export default function Fb() {
+export default function Insta() {
   return (
     <View style={styles.container}>
       <View style={styles.wrap}>
@@ -21,7 +21,6 @@ export default function Fb() {
             <TextInput 
                 style={[styles.formControll,  styles.bold]}
                 placeholder="Tel or Email"
-                autoCapitalize="none"
               />
               <TextInput 
                 secureTextEntry={true} 
@@ -101,6 +100,7 @@ const styles = StyleSheet.create({
     paddingRight: 20
   },
   formControll: {
+    textTransform: 'lowercase',
     height: 40,
     backgroundColor: '#fff',
     marginLeft: 20,
