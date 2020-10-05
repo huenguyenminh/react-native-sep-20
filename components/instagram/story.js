@@ -8,43 +8,60 @@ export default function Story() {
         {
           id: 1,
           name: "Robin",
-          img: require('../../assets/instagram/avatar-1.jpg')
+          img: require('../../assets/instagram/avatar-1.jpg'),
+          stt: ''
         },
         {
             id: 2,
             name: "QueenMari",
-            img: require('../../assets/instagram/avatar-2.jpg')
+            img: require('../../assets/instagram/avatar-2.jpg'),
+            stt: ''
         },
         {
             id: 3,
             name: "Helen",
-            img: require('../../assets/instagram/avatar-3.jpg')
+            img: require('../../assets/instagram/avatar-3.jpg'),
+            stt: 'read'
         },
         {
             id: 4,
             name: "Robin",
-            img: require('../../assets/instagram/avatar-4.jpg')
+            img: require('../../assets/instagram/avatar-4.jpg'),
+            stt: 'new'
         },
         {
             id: 5,
             name: "Alex Max",
-            img: require('../../assets/instagram/avatar-5.jpg')
+            img: require('../../assets/instagram/avatar-5.jpg'),
+            stt: ''
         },
         {
             id: 6,
             name: "Robin",
-            img: require('../../assets/instagram/avatar-1.jpg')
+            img: require('../../assets/instagram/avatar-1.jpg'),
+            stt: ''
         },
         {
             id: 7,
             name: "QueenMari",
-            img: require('../../assets/instagram/avatar-2.jpg')
+            img: require('../../assets/instagram/avatar-2.jpg'),
+            stt: ''
         }
       ];
     const listStories = stories.map((story)=>{
+        console.log([styles.wrapImg, story.stt ? styles.borderRed : '']);
+        const arrStyles = [styles.wrapImg];
+        if (story.stt === 'read') {
+            arrStyles.push(styles.borderGray);
+        } else if (story.stt === 'new') {
+            arrStyles.push(styles.borderRed);
+        }
+
         return (
             <TouchableOpacity style={styles.story} key={story.id}>
-                <Image style={styles.storyImg} source={story.img}/>
+                <View style={arrStyles}>
+                    <Image style={styles.storyImg} source={story.img}/>
+                </View>
                 <Text style={styles.storyName} numberOfLines={1}>{story.name}</Text> 
             </TouchableOpacity>
         );
@@ -79,14 +96,27 @@ const styles = StyleSheet.create({
         paddingHorizontal: 8,
         width: 72,
     },
+    wrapImg: {
+        borderRadius: 30,
+        borderColor: 'transparent',
+        borderWidth:1,
+        width: 62,
+        height: 62,
+        alignItems: "center",
+        justifyContent: 'center',
+        marginHorizontal: 8,
+        marginBottom: 10,
+    },
+    borderGray: {
+        borderColor: 'gray',
+    },
+    borderRed: {
+        borderColor: 'red',
+    },
     storyImg: {
         width: 56,
         height: 56,
-        paddingHorizontal: 8,
         borderRadius: 28,
-        marginBottom: 10,
-        marginLeft: 'auto',
-        marginRight: 'auto'
     },
     storyName: {
         width: '100%',
