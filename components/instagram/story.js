@@ -49,7 +49,6 @@ export default function Story() {
         }
       ];
     const listStories = stories.map((story)=>{
-        console.log([styles.wrapImg, story.stt ? styles.borderRed : '']);
         const arrStyles = [styles.wrapImg];
         if (story.stt === 'read') {
             arrStyles.push(styles.borderGray);
@@ -93,7 +92,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     story: {
-        paddingHorizontal: 8,
+        paddingRight: 4,
         width: 72,
     },
     wrapImg: {
@@ -104,11 +103,11 @@ const styles = StyleSheet.create({
         height: 62,
         alignItems: "center",
         justifyContent: 'center',
-        marginHorizontal: 8,
+        marginHorizontal: 4,
         marginBottom: 10,
     },
     borderGray: {
-        borderColor: 'gray',
+        borderColor: '#afafaf',
     },
     borderRed: {
         borderColor: 'red',
